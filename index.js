@@ -61,8 +61,10 @@ app.get("/compose", (req, res) => {
   res.render("compose");
 });
 
-app.get("/diary", (req, res) => {
-  res.render("diary");
+app.post("/compose", (req, res) => {
+  const { title, content } = req.body;
+  diaryArray.push({ title, content });
+  res.redirect("/");
 });
 
 app.get("/diary/:diaryId", (req, res) => {
@@ -71,12 +73,6 @@ app.get("/diary/:diaryId", (req, res) => {
     return title(diary.title) === diaryId;
   });
   res.render("diary", { diary: singleDiary[0] });
-});
-
-app.post("/compose", (req, res) => {
-  const { title, content } = req.body;
-  diaryArray.push({ title, content });
-  res.redirect("/");
 });
 
 app.listen(3000, () => {

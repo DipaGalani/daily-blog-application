@@ -7,17 +7,18 @@
     <section class="container">
       <h1>Compose</h1>
       <form action="/compose" method="post">
-        <div>
-          <label for="title">Title</label> <br />
-          <input type="text" name="title" id="title" />
+        <div class="form-group">
+          <label>Title</label>
+          <input class="form-control" type="text" name="title" />
+          <label>Diary</label>
+          <textarea
+            class="form-control"
+            name="content"
+            rows="5"
+            cols="30"
+          ></textarea>
         </div>
-
-        <div>
-          <label for="diary">Diary</label> <br />
-          <textarea name="content" rows="10" cols="50"></textarea>
-        </div>
-
-        <button type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </section>
 
