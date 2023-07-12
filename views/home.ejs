@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('headMeta') %>
+  <body>
+    <%- include('navbar') %>
+
+    <section class="container">
+      <h1>Home</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis deleniti
+        sunt quisquam reiciendis voluptatibus nihil, architecto debitis
+        consectetur repudiandae, vel, natus in doloremque provident quos? Nulla
+        similique tempore ratione temporibus?
+      </p>
+
+      <% for (let i = 0; i < diaryData.length; i++) { %>
+      <h2><%=diaryData[i].title%></h2>
+      <p>
+        <%=diaryData[i].content%>
+        <a href="/diary/<%= diaryData[i].id %>">read more</a>
+      </p>
+      <% } %>
+    </section>
+
+    <%- include('footer') %>
+  </body>
+</html>

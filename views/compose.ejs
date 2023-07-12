@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('headMeta') %>
+  <body>
+    <%- include('navbar') %>
+
+    <section class="container">
+      <h1>Compose</h1>
+      <form action="/compose" method="post">
+        <div>
+          <label for="title">Title</label> <br />
+          <input type="text" name="title" id="title" />
+        </div>
+
+        <div>
+          <label for="diary">Diary</label> <br />
+          <textarea name="content" rows="10" cols="50"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <%- include('footer') %>
+  </body>
+</html>
